@@ -21,9 +21,9 @@ class PredictView(APIView):
         serializer = UserActivitySerializer(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
-            input_data = np.array([[data['mouse_movements'],
-                                    data['keyboard_inputs'],
-                                    data['time_on_page'],
+            input_data = np.array([[data['mouseMovementCount'],
+                                    data['keystrokeCount'],
+                                    data['timeOnPage'],
                                     int(data['js_enabled'])]])
             prediction = model.predict(input_data)[0]
             probability = model.predict_proba(input_data)[0][1]
