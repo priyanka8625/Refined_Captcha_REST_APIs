@@ -55,6 +55,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # React frontend
+    'http://localhost:3001',  # React frontend
 ]
 
 ROOT_URLCONF = 'refined_captcha_api.urls'
